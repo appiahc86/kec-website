@@ -76,10 +76,5 @@
 
 
 <style scoped>
-.cover {
-  /*background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),url("/img/about/cover.jpg");*/
-  background: url("/img/about/cover.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 </style>
