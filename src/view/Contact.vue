@@ -26,7 +26,7 @@
           <h1 class="fw-bold mb-4"><span class="pi pi-envelope" style="font-size: 1em;"></span></h1>
           <h1 class="fw-bold mb-4" style="font-size: 1.5em;">Email</h1>
           <p class="mb-4">Kindly send us an email using the email address below</p>
-          <a  class="text-decoration-none text-info">kecomplex@gmail.com</a>
+          <a  class="text-decoration-none text-info">keckonto@gmail.com</a>
         </div>
         <div class="col-md-4 mt-5">
           <h1 class="fw-bold mb-4"><span class="pi pi-map-marker" style="font-size: 1em;"></span></h1>

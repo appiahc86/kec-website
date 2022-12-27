@@ -11,11 +11,11 @@
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-md-4">
-        <h3>About Kontoh Educational Complex</h3>
+        <h4 class="text-center fw-bold text-danger">About Kontoh Educational Complex</h4>
         <img src="/img/about/1.jpg" alt="nn" class="img-fluid w-100">
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-4 mt-3">
         <h5>Alias aliquam asperiores.</h5>
      <p>
        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam, assumenda
