@@ -19,3 +19,19 @@
   }
 }
 
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  transition: transform 1s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.0); /* IE 9 */
+  -webkit-transform: scale(1.0); /* Safari 3-8 */
+  transform: scale(.9);
+}

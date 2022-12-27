@@ -1,5 +1,24 @@
 <script setup>
+import emailjs from '@emailjs/browser';
+import {ref} from "vue";
+import Button from "primevue/button";
+import { useToast } from "primevue/usetoast";
+import Toast from "primevue/toast";
+const sendingMail = ref(false);
 
+const toast = useToast();
+const myForm = ref();
+const sendMail = async () => {
+  try {
+    sendingMail.value = true;
+    const result = await emailjs.sendForm('service_htz4qfg', 'contact_form', myForm.value, 'QuYtDzfIbQkBjBtnD');
+    myForm.value.reset();
+    toast.add({severity:'success', summary: 'Thank YOu!', detail:'Your Message has been sent', life: 4000});
+  }catch (e){
+    toast.add({severity:'error', summary: 'Error!', detail:'Sorry, error occurred. Please try again later', life: 4000});
+  }finally { sendingMail.value = false; }
+
+}
 </script>
 
 <template>
@@ -45,23 +64,26 @@
       <div class="col-sm-6 text-center">
         <h1 class="fw-bold">LEAVE US YOUR MESSAGE</h1>
         <p style="font-size: 1em;">AND WE WILL GET IN TOUCH WITH YOU</p>
-        <form class="mb-5">
+        <form class="mb-5" ref="myForm" @submit.prevent="sendMail">
           <div class="form-floating">
             <div class="p-inputgroup">
-              <input type="text" placeholder="Your Name*" class="p-input p-inputtext mb-3">
+              <input type="text" placeholder="Your Name*" required class="p-input p-inputtext mb-3" name="name">
 
             </div>
             <div class="p-inputgroup">
-              <input type="email" placeholder="Email*" class="p-input p-inputtext mb-3">
+              <input type="email" required placeholder="Email*" class="p-input p-inputtext mb-3" name="email">
             </div>
             <div class="p-inputgroup">
-              <input type="text" placeholder="Subject*" class="p-input p-inputtext mb-3">
+              <input type="text" required placeholder="Subject*" class="p-input p-inputtext mb-3" name="subject">
             </div>
             <div class="p-inputgroup">
-              <textarea cols="10" rows="5" placeholder="Message*" class="p-inputtext"></textarea>
+              <textarea cols="10" rows="5" required placeholder="Message*" class="p-inputtext" name="message"></textarea>
             </div>
             <div class="p-inputgroup mt-3">
-              <button class="p-button p-button-rounded p-button mx-auto">Send Now</button>
+
+              <Button label="Send Now" type="submit" class="p-button-rounded p-button-sm mx-auto mt-3"
+                      :loading="sendingMail" loadingIcon="spinner-border"
+                    />
             </div>
 
           </div>
@@ -71,7 +93,7 @@
   </div>
 </div>
 
-
+  <Toast position="center" style="padding: 0;"/>
 </template>
 
 
