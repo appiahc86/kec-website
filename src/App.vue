@@ -35,7 +35,7 @@ const goToHome = () => router.push({name: 'home'});
 
   <div class="offcanvas offcanvas-lg offcanvas-end"  style="width: 60% !important; background: #ccc;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel"></h5>
       <button type="button" class="btn-close" ref="canvasBtnClose" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body text-center">

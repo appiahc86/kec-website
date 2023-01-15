@@ -13,6 +13,7 @@
     "primeicons": "^6.0.1",
     "primevue": "^3.21.0",
     "vue": "^3.2.45",
+    "vue-clazy-load": "^0.4.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

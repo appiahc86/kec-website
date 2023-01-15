@@ -4,9 +4,10 @@ import Carousel from "primevue/carousel";
 
 //carousel images
 const images = ref([
-  {img: "/img/carousel/c1.jpg"},
-  {img: "/img/carousel/c2.jpg"},
-  {img: "/img/carousel/c3.jpg"},
+  {img: "/img/carousel/c1.jpg", name: "c1"},
+  {img: "/img/carousel/c2.jpg", name: "c2"},
+  {img: "/img/carousel/c3.jpg", name: "c3"},
+  {img: "/img/carousel/c4.jpg", name: "c4"},
 ])
 </script>
 
@@ -19,7 +20,7 @@ const images = ref([
         <div class="product-item">
           <div class="product-item-content">
             <div class="mb-3">
-              <img :src="slotProps.data.img" :alt="slotProps.data.img" class="img-fluid w-100"/>
+              <img :src="slotProps.data.img" :alt="slotProps.data.name" class="img-fluid w-100"/>
             </div>
           </div>
         </div>
@@ -97,7 +98,7 @@ const images = ref([
   border-radius: 20px;
 }
 .s1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s1.jpeg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s1.jpg");
 }
 .s2 {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s2.jpg");
@@ -110,7 +111,6 @@ const images = ref([
 .background {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/bg.jpg");
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
 }
 

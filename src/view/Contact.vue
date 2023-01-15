@@ -8,12 +8,16 @@ const sendingMail = ref(false);
 
 const toast = useToast();
 const myForm = ref();
+const email = ref('');
 const sendMail = async () => {
   try {
+    if (!email.value.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)){
+      return toast.add({severity:'error', summary: 'Error!', detail:'Please Enter a valid email address', life: 4000});
+    }
     sendingMail.value = true;
     const result = await emailjs.sendForm('service_htz4qfg', 'contact_form', myForm.value, 'QuYtDzfIbQkBjBtnD');
     myForm.value.reset();
-    toast.add({severity:'success', summary: 'Thank YOu!', detail:'Your Message has been sent', life: 4000});
+    toast.add({severity:'success', summary: 'Thank You!', detail:'Your Message has been sent', life: 4000});
   }catch (e){
     toast.add({severity:'error', summary: 'Error!', detail:'Sorry, error occurred. Please try again later', life: 4000});
   }finally { sendingMail.value = false; }
@@ -38,14 +42,14 @@ const sendMail = async () => {
           <h1 class="fw-bold mb-4"><span class="pi pi-phone" style="font-size: 1em;"></span></h1>
           <h1 class="fw-bold mb-4" style="font-size: 1.5em;">Call Us On</h1>
           <p class="mb-4">Kindly contact us on the following phone numbers:</p>
-          <a href="tel:+2332436373432" class="text-decoration-none text-info">233 243 637 3432</a> /
-          <a href="tel:+2335436373432" class="text-decoration-none text-info">233 543 637 3432</a>
+          <a href="tel:+233243321512" class="text-decoration-none text-info">233 243 321 512</a> /
+          <a href="tel:+233598559814" class="text-decoration-none text-info">233 598 559 814</a>
         </div>
         <div class="col-md-4 px-md-4 mt-5">
           <h1 class="fw-bold mb-4"><span class="pi pi-envelope" style="font-size: 1em;"></span></h1>
           <h1 class="fw-bold mb-4" style="font-size: 1.5em;">Email</h1>
           <p class="mb-4">Kindly send us an email using the email address below</p>
-          <a  class="text-decoration-none text-info">keckonto@gmail.com</a>
+          <a  class="text-decoration-none text-info">kontohschool@gmail.com</a>
         </div>
         <div class="col-md-4 mt-5">
           <h1 class="fw-bold mb-4"><span class="pi pi-map-marker" style="font-size: 1em;"></span></h1>
@@ -71,7 +75,7 @@ const sendMail = async () => {
 
             </div>
             <div class="p-inputgroup">
-              <input type="email" required placeholder="Email*" class="p-input p-inputtext mb-3" name="email">
+              <input type="email" v-model="email" required placeholder="Email*" class="p-input p-inputtext mb-3" name="email">
             </div>
             <div class="p-inputgroup">
               <input type="text" required placeholder="Subject*" class="p-input p-inputtext mb-3" name="subject">
@@ -85,7 +89,6 @@ const sendMail = async () => {
                       :loading="sendingMail" loadingIcon="spinner-border"
                     />
             </div>
-
           </div>
         </form>
       </div>
