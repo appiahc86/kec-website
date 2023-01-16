@@ -13,11 +13,11 @@
     "primeicons": "^6.0.1",
     "primevue": "^3.21.0",
     "vue": "^3.2.45",
-    "vue-clazy-load": "^0.4.2",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/babel-preset-app": "^5.0.8",
     "vite": "^4.0.0"
   }
 }

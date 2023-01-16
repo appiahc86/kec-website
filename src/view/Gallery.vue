@@ -18,6 +18,7 @@ const images = ref([
   '/img/gallery/13.jpg',
   '/img/gallery/14.jpg',
   '/img/gallery/15.jpg',
+  '/img/gallery/16.jpg',
 ]);
 
 
