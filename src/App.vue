@@ -18,7 +18,7 @@ const goToHome = () => router.push({name: 'home'});
     <div class="container-fluid">
       <router-link class="navbar-brand" :to="{name: 'home'}">
         <img src="/img/logo.png" alt="logo" width="30" height="30">&nbsp;
-        <span class="text-warning fw-bold logo-name">Kontoh <span class="text-primary">Educational Complex</span></span>
+        <span class="text-primary fw-bold logo-name">Kontoh Educational Complex</span>
       </router-link>
       <div class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <span class="pi pi-bars"></span>

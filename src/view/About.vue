@@ -11,7 +11,7 @@
   <div class="container-fluid mt-5">
     <div class="row">
       <div class="col-md-4">
-        <h5>About US.</h5>
+        <h5>About Us</h5>
         <p>
           Kontoh Educational Complex (KEC) is a private school committed to academic excellence
           through focus education, service, fostering intellectual curiosity, self-directed
@@ -29,7 +29,7 @@
       </div>
 
       <div class="col-md-4 mt-3">
-        <h5>History.</h5>
+        <h5>History</h5>
         <p>
           The Kontoh Educational Complex, Ghana was founded by Mr. Nat Kontoh upon his
           return from the USA. Mr. Nat Kontoh had come to Ghana after having spent six
