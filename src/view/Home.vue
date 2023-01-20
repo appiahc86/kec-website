@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import {onMounted, ref} from "vue";
 import Carousel from "primevue/carousel";
 
 //carousel images
@@ -9,11 +9,36 @@ const images = ref([
   {img: "/img/carousel/c3.jpg", name: "c3"},
   {img: "/img/carousel/c4.jpg", name: "c4"},
 ])
+
+onMounted(() => {
+  const container = document.querySelector('.animate-container');
+  const show = document.querySelector('#show');
+
+  window.addEventListener('scroll', () => {
+    const containerRect = container.getBoundingClientRect();
+
+    if (containerRect.top < window.innerHeight) {
+      container.style.transform = "translateY(-70px)";
+      container.style.transition = "all 2s";
+      setTimeout(() => {
+        // container.style.transform = "translateY(-100px)";
+        // container.style.transition = "all 2s";
+
+        show.style.display = "inline";
+        container.style.display = "none";
+      }, 2000)
+
+
+    }
+  });
+
+
+})
 </script>
 
 <template>
   <br>
-  <div style="margin-top: 48px !important;" class="mt-5">
+  <div style="margin-top: 40px !important;" class="mt-5">
     <Carousel :value="images" :numVisible="1" :numScroll="1" :circular="true" :showNavigators="false"
               :autoplayInterval="4000">
       <template #item="slotProps">
@@ -58,31 +83,33 @@ const images = ref([
         <div class="col-sm-6 py-5">
             <p class="text-center">
               <span style="font-size: 2em;" class="pi pi-thumbs-up-fill"></span>
-
             </p>
-          <p class="fw-bold" style="font-size: 2em;" >
-            <span class="text-warning">Kontoh</span> Educational Complex
+          <p class="fw-bold" style="font-size: 1.5em;" >
+            <span class="" id="show" style="display:none;"><img src="/img/logo.png" alt="logo" width="50" height="50"></span>
+            <span class="text-warning down-name">Kontoh <span class="text-white">Educational Complex</span></span>
           </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aspernatur, atque aut
-            beatae blanditiis cum deleniti eaque eligendi error ex fuga labore modi,
-            perferendis provident quas quibusdam ratione vero! Sed?</p>
+
+            <div class="animate-container">
+              <img src="/img/logo.png" alt="logo" width="50" height="50">
+            </div>
+
         </div>
         <div class="col-sm-6 py-5">
-          <h5 class="text-info">Aliquam delectus eveniet</h5>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus eveniet ex impedit ipsam,
-            iure minima similique. Asperiores error excepturi neque vitae.
-            At et id iusto neque, similique totam voluptate?
+            Kontoh Educational Complex offers pre-school, primary and junior
+            high school. The school was founded in January 2014 by the Late Nathaniel Kontoh,
+            a retired Headmaster of Saint Peters Secondary school.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus eveniet ex impedit ipsam,
-            iure minima similique. Asperiores error excepturi neque vitae.
-            At et id iusto neque, similique totam voluptate?
+            KEC seeks that, all learners find pathways to success through the independence,
+            innovation, and diversity of our schools, creating a more equitable world. We train
+            children from all walks of life irrespective of their belief or faith. We seek to
+            make education convenient for anyone who has passion for school.
           </p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad alias enim esse
-            excepturi hic id illo ipsum molestiae nihil pariatur provident quaerat saepe
-            sapiente sequi, soluta vel veniam voluptas.</p>
-          <h5 class="">Lorem ipsum dolor sit amet.</h5>
+
+          <router-link class="text-decoration-none" :to="{name: 'about'}">
+            <h5 class="text-white read-more">Read More <span class="pi pi-arrow-right fw-bold"></span></h5>
+          </router-link>
 
         </div>
       </div>
@@ -114,4 +141,19 @@ const images = ref([
   background-size: cover;
 }
 
+.read-more:hover {
+  color: #9a9797 !important;
+}
+
+@media screen and (max-width: 700px){
+  .down-name{
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .down-name{
+    font-size: 0.6em;
+  }
+}
 </style>

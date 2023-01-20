@@ -14,18 +14,21 @@ const goToHome = () => router.push({name: 'home'});
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-sm bg-light fixed-top">
+  <nav class="navbar navbar-expand-md bg-light fixed-top">
     <div class="container-fluid">
-      <h5 class="navbar-brand" style="cursor: pointer;" @click="goToHome">KEcomplex</h5>
+      <router-link class="navbar-brand" :to="{name: 'home'}">
+        <img src="/img/logo.png" alt="logo" width="30" height="30">&nbsp;
+        <span class="text-warning fw-bold logo-name">Kontoh <span class="text-primary">Educational Complex</span></span>
+      </router-link>
       <div class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <span class="pi pi-bars"></span>
       </div>
       <div class="collapse navbar-collapse justify-content-end">
         <div class="navbar-nav">
-          <router-link class="nav-link" :to="{name: 'home'}">Home</router-link>
-          <router-link :to="{name: 'about'}" class="nav-link">About Us</router-link>
-          <router-link :to="{name: 'gallery'}" class="nav-link">Gallery</router-link>
-          <router-link :to="{name: 'contact'}" class="nav-link">Contact</router-link>
+          <router-link class="nav-link mx-2 links" :to="{name: 'home'}">Home</router-link>
+          <router-link :to="{name: 'about'}" class="nav-link mx-2 links">About Us</router-link>
+          <router-link :to="{name: 'gallery'}" class="nav-link mx-2 links">Gallery</router-link>
+          <router-link :to="{name: 'contact'}" class="nav-link mx-2 links">Contact</router-link>
         </div>
       </div>
     </div>
@@ -90,4 +93,21 @@ const goToHome = () => router.push({name: 'home'});
   font-weight: bold;
 }
 
+@media screen and (max-width: 500px){
+  .logo-name{
+    font-size: 0.85em;
+  }
+}
+
+@media screen and (max-width: 350px){
+  .logo-name{
+    font-size: 0.5em;
+  }
+}
+
+/*@media screen and (max-width: 300px){*/
+/*  .logo-name{*/
+/*    font-size: 0.5em;*/
+/*  }*/
+/*}*/
 </style>
