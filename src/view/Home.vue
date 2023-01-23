@@ -4,10 +4,10 @@ import Carousel from "primevue/carousel";
 
 //carousel images
 const images = ref([
-  {img: "/img/carousel/c1.jpg", name: "c1"},
-  {img: "/img/carousel/c2.jpg", name: "c2"},
-  {img: "/img/carousel/c3.jpg", name: "c3"},
-  {img: "/img/carousel/c4.jpg", name: "c4"},
+  {img: "./img/carousel/c1.jpg", name: "c1"},
+  {img: "./img/carousel/c2.jpg", name: "c2"},
+  {img: "./img/carousel/c3.jpg", name: "c3"},
+  {img: "./img/carousel/c4.jpg", name: "c4"},
 ])
 
 onMounted(() => {
@@ -90,7 +90,7 @@ onMounted(() => {
           </p>
 
             <div class="animate-container">
-              <img src="/img/logo.png" alt="logo" width="50" height="50">
+              <img src="../../public/img/logo.png" alt="logo" width="50" height="50">
             </div>
 
         </div>
@@ -125,18 +125,18 @@ onMounted(() => {
   border-radius: 20px;
 }
 .s1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s1.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../public/img/s1.jpg");
 }
 .s2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s2.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../public/img/s2.jpg");
 }
 .s3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/s3.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../public/img/s3.jpg");
 }
 
 
 .background {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/img/bg.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../../public/img/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

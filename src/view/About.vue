@@ -83,7 +83,7 @@
 
 <style scoped>
 .cover {
-  background: url("/img/about/cover.jpg");
+  background: url("../../public/img/about/cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }

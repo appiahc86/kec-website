@@ -9,8 +9,6 @@ const closeSidebar = () => {
   canvasBtnClose.value.click();
 }
 
-const goToHome = () => router.push({name: 'home'});
-
 </script>
 
 <template>
